@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" >
+window.onload=function(){
+	var li=document.getElementsByTagName("li");
+	for(var j=0;j<li.length;j++){
+		li[j].style.border="1px solid #000 ";
+		li[j].onmouseover=function(){
+			this.style.backgroundColor='blue';
+		}
+		li[j].onmouseout=function(){
+			this.style.backgroundColor='white';
+		}
+		li[j].onclick=function(){
+			alert("Hello");
+		}
+	}
+
+	var every=document.getElementById("everywhere");
+	every.parentNode.removeChild(every);
+	//匿名函数 避免全局作用域
+	(function(){
+		var json={
+				"breakfast":[{
+					"name": "Egg",
+					"bread": "Muffin"
+				},
+				{
+					"name": "Egg",
+					"bread": "Muffin"
+				}         
+				             ]
+		}
+		//alert(json.breakfast[1].name);
+	})();
+	//函数返回多值
+	var mes="Hello,world!"
+	function module(p,q){
+		return [p/q,p%q];
+	}
+	//alert(module(9,5)[1]);
+	//函数作为方法使用
+	var myMethod={
+			sayHello: function(message){
+				return message;
+			}
+	};
+	
+	alert(myMethod.sayHello("hello"));
+	
+};
+</script>
+
+</head>
+<body>
+	<h1>Introduction to the DOM<h1>
+	<ul>
+		<li id="everywhere">It can be found every where.</li>
+		<li class="test">It is easy to use!</li>
+		<li class="test">quicklly</li>
+	</ul>
+</body>
+<script src="../WebLib/jquery/jquery.js"></script>
+</html>
