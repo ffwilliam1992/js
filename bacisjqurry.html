@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 10</title>
+<style>
+	#container{
+		overflow:hidden;
+	}
+	.module{
+		width:100%;
+		float:left;
+		height:300px;
+		background: #eee;
+		text-align:center
+	}
+</style>
+
+<script type="text/javascript" >
+window.onload=function(){
+	//var module=$(".module");
+	//var container=document.getElementById("container");
+	var container=$("#container");
+	var module=$(".module");
+	//事件 主要是click mouseover mouseout submit change blur focus keyup keydown
+	//$('button').click(
+		//	function () {
+			//	alert('I Love You!');
+			//}
+	//);
+	
+	$('button').click(
+		function () {
+			//事件与css结合制作javascript动画，函数库提供animate方法
+			//接受三个参数
+			//1.与css方法一样动画所用的css属性
+			//2.动画持续的毫秒数
+			//3.第三个参数可选择，动画播放完毕后执行的回调函数
+			
+			$(".module").animate({
+				'height':'0px'	
+			},500,function(){
+				$('button').text('I Love You!');
+			}
+			);
+		}
+	);
+
+};
+
+</script>
+
+
+</head>
+<body>
+<button type="button">Don't Click Button!!!</button>
+<div class="module">
+	<p>Hello Module One</p>
+</div>
+<div class="module">
+	<p>Hello Module Two</p>
+</div>
+<div class="module">
+	<p>Hello Module Three</p>
+</div>
+
+</body>
+<script src="WebLib/jquery/jquery.js"></script>
+</html>
